@@ -13,7 +13,7 @@ import { MainLayoutComponent } from './shared/main-layout/main-layout.component'
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { MoviesService } from './core/services/movies.service';
-
+import {MatButtonModule} from '@angular/material/button'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +31,7 @@ import { MoviesService } from './core/services/movies.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    
+    MatButtonModule,
   ],
   providers: [
     MoviesService

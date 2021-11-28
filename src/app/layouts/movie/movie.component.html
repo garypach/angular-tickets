@@ -1,1 +1,17 @@
-<p>movie works!</p>
+<div class="container">
+    <div class="movie-page">
+        <div class="movie-poster">
+            <img src="{{'https://image.tmdb.org/t/p/w780' + movie.backdrop_path}}" />
+            <div class="movie-title">
+                <p>{{movie.title}}</p>
+                <button mat-raised-button isRoundButton=true color="warn">Get tickets</button>
+        </div>
+      
+    </div>
+   
+</div>
+
+    <div class="movie-overview container">
+        {{movie.overview}}
+    </div>
+
