@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MoviesService } from 'src/app/core/services/movies.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { MoviesService } from 'src/app/core/services/movies.service';
 export class MovieComponent implements OnInit {
   movie: any = [];
 
-  constructor(private _singleMovie: MoviesService,private route: ActivatedRoute ) {
+  constructor(private _singleMovie: MoviesService,private route: ActivatedRoute, private router: Router ) {
     
    }
 
@@ -23,5 +23,9 @@ export class MovieComponent implements OnInit {
     })
   
   }
+  clickedGetTickets(id:number){
+    this.router.navigate(['movies',id,'schedule'])
+  }
+
 
 }

@@ -4,7 +4,7 @@
             <img src="{{'https://image.tmdb.org/t/p/w780' + movie.backdrop_path}}" />
             <div class="movie-title">
                 <p>{{movie.title}}</p>
-                <button mat-raised-button isRoundButton=true color="warn">Get tickets</button>
+                <button mat-raised-button isRoundButton=true color="warn" (click)="clickedGetTickets(movie.id)">Get tickets</button>
         </div>
       
     </div>

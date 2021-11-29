@@ -30,6 +30,8 @@
 }
 .movie-title button{
   margin-top: 20px;
+  cursor: pointer;
+  z-index: 9;
 }
 .movie-overview{
     margin-top: 50px;

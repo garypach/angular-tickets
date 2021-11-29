@@ -14,6 +14,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { MoviesService } from './core/services/movies.service';
 import {MatButtonModule} from '@angular/material/button'; 
+import {MatInputModule} from '@angular/material/input'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,9 +33,10 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserAnimationsModule,
     HttpClientModule,
     MatButtonModule,
+    MatInputModule,
   ],
   providers: [
-    MoviesService
+    MoviesService,
   ],
   bootstrap: [AppComponent]
 })

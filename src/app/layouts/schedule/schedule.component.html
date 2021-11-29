@@ -1,1 +1,137 @@
-<p>schedule works!</p>
+<div class="schedule">
+    <div class="schedule-bg" [style.background]="'url(https://image.tmdb.org/t/p/w780'+ movie.backdrop_path + ')'">
+    </div>
+    <div class="container">
+        <div class="schedule-page container" >
+            <div class="schedule-content">
+                <div class="row">
+                    <div class="col-md-12">
+                    </div>
+                    </div>
+                    <div class="row">
+                        <h1>{{movie.title}}</h1>
+                        <h1>Theater</h1>
+                    <div class="col-md-12">
+                        <h2>Digital</h2>
+                        <div class="theater-desc row">
+                            <div class="col">Reserved Seating</div>
+                            <div class="col">Closed Caption</div>
+                            <div class="col">Audio Description</div>
+                        </div>
+                        <div class="hours-list row">
+                        <div class="time col">1:20pm</div>
+                        <div class="time col">4:30pm</div>
+                        <div class="time col">8:00pm</div>
+    
+    
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="row">
+                    <div class="col-md-12">
+                        <h2>Tickets</h2>
+                        <div class="tickets-list">
+                        <div class="ticket-select">
+                            <div class="row">
+                                <div class="col">Adult</div>
+                                <div class="col"><input type="number" value="1"/></div>
+                                <div class="col">x 17</div>
+                                <div class="col">= $17</div>
+                            </div>
+                            <div class="row">
+                                <div class="col">Child</div>
+                                <div class="col"><input type="number" value="1"/></div>
+                                <div class="col">x 15</div>
+                                <div class="col">= $15</div>
+                            </div>
+                            <div class="row">
+                                <div class="col">Senior</div>
+                                <div class="col"><input type="number" value="1"/></div>
+                                <div class="col">x 13</div>
+                                <div class="col">= $13</div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div> -->
+                <section id="select-chair">
+                    <div class="row constainer">
+                        <div class="col-md-12 container">
+                            SCREEN
+    
+                            <div class="seats-grid container">
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                              <div class="seat"></div>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="seat-legend">
+                        <div class="icon">
+                            <div class="open-seat"></div>
+                            <div>Available</div>
+                        </div>
+                        <div class="icon">
+                            <div class="selected-seat"></div>
+                            <div>Selected</div>
+                        </div>
+                        <div class="icon">
+                            <div class="reserved-seat"></div>
+                            <div>Occupied</div>
+                        </div>
+                      
+                    </div>
+                    
+                </section>
+                
+            </div>
+          
+        </div>
+    </div>
+    
+    
+</div>
