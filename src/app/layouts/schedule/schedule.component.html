@@ -19,9 +19,9 @@
                             <div class="col">Audio Description</div>
                         </div>
                         <div class="hours-list row">
-                        <div class="time col">1:20pm</div>
-                        <div class="time col">4:30pm</div>
-                        <div class="time col">8:00pm</div>
+                        <div class="time col timeselected" (click)="clickedTime('1:20pm')" [ngClass]="{timeselected: time == '1:20pm'}">1:20pm</div>
+                        <div class="time col" (click)="clickedTime('4:30pm')" [ngClass]="{timeselected: time == '4:30pm'}">4:30pm</div>
+                        <div class="time col" (click)="clickedTime('8:00pm')" [ngClass]="{timeselected: time == '8:00pm'}">8:00pm</div>
     
     
                         </div>
@@ -58,53 +58,11 @@
                     <div class="row constainer">
                         <div class="col-md-12 container">
                             SCREEN
-    
+                            
                             <div class="seats-grid container">
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
-                              <div class="seat"></div>
+                                <ng-container  *ngFor="let seats of movie.seats; index as i">
+                                    <div class="seat" [ngClass]="{reserved: seats == 'reserved',selected: seats == 'selected'}" (click)=" clickedSeat(movie.title,movie.id,i+1,5)">{{i+1}}</div>
+                                </ng-container>
                             </div>
                             
                         </div>
