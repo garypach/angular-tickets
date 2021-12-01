@@ -14,7 +14,10 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { MoviesService } from './core/services/movies.service';
 import {MatButtonModule} from '@angular/material/button'; 
-import {MatInputModule} from '@angular/material/input'; 
+import {MatInputModule} from '@angular/material/input';
+import { TicketsComponent } from './layouts/tickets/tickets.component';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +28,8 @@ import {MatInputModule} from '@angular/material/input';
     ThankYouComponent,
     MainLayoutComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    TicketsComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +38,7 @@ import {MatInputModule} from '@angular/material/input';
     HttpClientModule,
     MatButtonModule,
     MatInputModule,
+    FormsModule
   ],
   providers: [
     MoviesService,

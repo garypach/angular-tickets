@@ -5,7 +5,7 @@ import { HomeComponent } from './layouts/home/home.component';
 import { MovieComponent } from './layouts/movie/movie.component';
 import { ScheduleComponent } from './layouts/schedule/schedule.component';
 import { ThankYouComponent } from './layouts/thank-you/thank-you.component';
-
+import { TicketsComponent } from './layouts/tickets/tickets.component';
 const routes: Routes = [
 {
   path:'',
@@ -17,7 +17,11 @@ const routes: Routes = [
   component: MovieComponent
 },
 {
-  path:'movies/:title/schedule',
+  path:'movies/:title/tickets',
+  component: TicketsComponent
+},
+{
+  path:'movies/:title/tickets/schedule',
   component: ScheduleComponent
 },
 {

@@ -27,33 +27,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="row">
-                    <div class="col-md-12">
-                        <h2>Tickets</h2>
-                        <div class="tickets-list">
-                        <div class="ticket-select">
-                            <div class="row">
-                                <div class="col">Adult</div>
-                                <div class="col"><input type="number" value="1"/></div>
-                                <div class="col">x 17</div>
-                                <div class="col">= $17</div>
-                            </div>
-                            <div class="row">
-                                <div class="col">Child</div>
-                                <div class="col"><input type="number" value="1"/></div>
-                                <div class="col">x 15</div>
-                                <div class="col">= $15</div>
-                            </div>
-                            <div class="row">
-                                <div class="col">Senior</div>
-                                <div class="col"><input type="number" value="1"/></div>
-                                <div class="col">x 13</div>
-                                <div class="col">= $13</div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div> -->
                 <section id="select-chair">
                     <div class="row constainer">
                         <div class="col-md-12 container">
@@ -61,7 +34,7 @@
                             
                             <div class="seats-grid container">
                                 <ng-container  *ngFor="let seats of movie.seats; index as i">
-                                    <div class="seat" [ngClass]="{reserved: seats == 'reserved',selected: seats == 'selected'}" (click)=" clickedSeat(movie.title,movie.id,i+1,5)">{{i+1}}</div>
+                                    <div class="seat" [ngClass]="{reserved: seats == 'reserved',selected: seats == 'selected'}" (click)=" clickedSeat(movie.title,movie.id,i+1,this.service.TotalTickets)">{{i+1}}</div>
                                 </ng-container>
                             </div>
                             

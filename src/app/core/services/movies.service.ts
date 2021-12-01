@@ -12,6 +12,7 @@ export class MoviesService {
     return this.http.get(url);
   }
   
+  TotalTickets:number = 0;
   constructor(private http:HttpClient) { }
   getAllMovies():Observable<any> {
     return this.http.get(this.apiUrl)
@@ -24,4 +25,6 @@ export class MoviesService {
   reserveSeat(slug:string,id:number,index:number){
     console.log(`${slug}:${id}:${index}`);
   }
+
+  
 }

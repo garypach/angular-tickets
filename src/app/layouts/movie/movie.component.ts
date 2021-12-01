@@ -23,8 +23,9 @@ export class MovieComponent implements OnInit {
     })
   
   }
+  
   clickedGetTickets(id:number){
-    this.router.navigate(['movies',id,'schedule'])
+    this.router.navigate(['movies',id,'tickets'])
   }
 
 

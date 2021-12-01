@@ -15,7 +15,7 @@ export class ScheduleComponent implements OnInit {
   };
   
   time = '';
-  constructor(private route:ActivatedRoute, private service:MoviesService) {
+  constructor(private route:ActivatedRoute, public service:MoviesService) {
     console.log(this.movie);
     this.route.paramMap.subscribe(params =>{
       this.movie = service.getMovieData(params.get('title')).subscribe((movie)=>{

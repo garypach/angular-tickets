@@ -1,0 +1,64 @@
+.tickets-list input{
+  box-sizing: border-box;
+  margin: 0;
+  outline: none;
+  padding: 10px;
+  background: transparent;
+  color: white;
+  text-align: center;
+  border: none;
+  font-weight: 700;
+  width: 130px;
+  font-size: 2em;
+  z-index: 9;
+}
+
+.tickets-list input[type="button"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+  z-index: 9;
+
+  
+}
+
+.tickets-list button{
+    background: transparent;
+    border: 1px solid #ffff;
+    font-size: 2em;
+    font-weight: 100;
+    z-index: 9;
+
+}
+
+
+
+.continue-tickets button:hover{
+    background-color: rgb(28, 135, 197);
+}
+.tickets{
+
+  position: relative;
+  overflow: hidden;
+  
+}
+.tickets-page{
+  color: white;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+}
+.tickets-bg{
+  height: 100vh;
+  filter:blur(20px);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transform: scale(2);
+  z-index: 1;
+}
+.tickets-bg:after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  box-shadow: inset 0px 0px 200px black;
+}
