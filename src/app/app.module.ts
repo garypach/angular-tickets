@@ -16,8 +16,8 @@ import { MoviesService } from './core/services/movies.service';
 import {MatButtonModule} from '@angular/material/button'; 
 import {MatInputModule} from '@angular/material/input';
 import { TicketsComponent } from './layouts/tickets/tickets.component';
-import { FormsModule } from '@angular/forms';
-
+import {MatFormFieldModule} from '@angular/material/form-field'; 
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     MainLayoutComponent,
     HeaderComponent,
     FooterComponent,
-    TicketsComponent
+    TicketsComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -38,7 +39,9 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     MatButtonModule,
     MatInputModule,
-    FormsModule
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     MoviesService,

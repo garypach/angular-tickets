@@ -1,1 +1,45 @@
-<p>checkout works!</p>
+<div class="tickets" >
+    <div class="container">
+        <div class="tickets-page container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>Checkout</h2>
+                    <div class="container inputgroup">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Enter your name</mat-label>
+                            <input matInput placeholder="name" [formControl]="name" required>
+                            <mat-error *ngIf="name.invalid">{{getNameErrorMessage()}}</mat-error>
+                          </mat-form-field>
+                       </div>
+               <div class="container inputgroup">
+                <mat-form-field appearance="fill">
+                    <mat-label>Enter your email</mat-label>
+                    <input matInput placeholder="pat@example.com" [formControl]="email" required>
+                    <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+                </mat-form-field>
+               </div>
+               <div class="container ">
+                <div class="container inputgroup">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter your card number</mat-label>
+                        <input matInput placeholder="" [formControl]="card" required>
+                        <mat-error *ngIf="card.invalid">{{getCardErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                   </div>
+                   <div class="container inputgroup">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter CVV</mat-label>
+                        <input matInput placeholder="" [formControl]="cvv" required>
+                        <mat-error *ngIf="cvv.invalid">{{getCvvErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                   </div>
+               </div>
+                </div>
+                <div class="container d-flex justify-content-center mb-5 continue-tickets">
+                    <button mat-raised-button isRoundButton="true" color="Link"  [style.font-size]="24+'px'" [style.width]="150+'px'"  [style.border-radius]="100+'px'" [style.padding]="10+'px'">Continue</button>
+                </div>
+        
+            </div>
+        </div>
+    </div>
+ </div>

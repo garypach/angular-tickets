@@ -14,6 +14,8 @@ export class TicketsComponent implements OnInit {
   quantityChild:number = 0;
   quantitySenior:number = 0;
 
+  totalTickets:number = this.quantityAdult + this.quantityChild + this.quantitySenior;
+
   constructor(private route:ActivatedRoute, public service:MoviesService, private router: Router ) {
     console.log(this.movie);
     this.route.paramMap.subscribe(params =>{
@@ -31,10 +33,7 @@ export class TicketsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
-  clickedGetSchedule(id:number){
-    this.router.navigate(['movies',id,'tickets','schedule'])
-  }
+ 
   clickedPlusAdult()
   {
     this.quantityAdult = this.quantityAdult + 1;
@@ -73,9 +72,20 @@ export class TicketsComponent implements OnInit {
   }
   }
 
-  clickedContinue(){
-    this.service.TotalTickets = this.quantityAdult + this.quantityChild + this.quantitySenior
-    console.log(this.service.TotalTickets)
+  clickedContinue(id:number){
+    if(this.quantityAdult === 0 && this.quantityChild===0 && this.quantitySenior ===0){
+      alert('Please select your ticket type(s)')
+      
+    }
+    else{
+      this.service.TotalTickets = this.quantityAdult + this.quantityChild + this.quantitySenior;
+      this.service.quantityAdult = this.quantityAdult;
+      this.service.quantityChild = this.quantityChild;
+      this.quantitySenior = this.quantitySenior;
+      console.log(this.service.TotalTickets)
+      this.router.navigate(['movies',id,'tickets','schedule'])
+    }
+
   }
 
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MoviesService } from 'src/app/core/services/movies.service';
 @Component({
   selector: 'app-schedule',
@@ -15,7 +15,7 @@ export class ScheduleComponent implements OnInit {
   };
   
   time = '';
-  constructor(private route:ActivatedRoute, public service:MoviesService) {
+  constructor(private route:ActivatedRoute, public service:MoviesService, private router:Router ) {
     console.log(this.movie);
     this.route.paramMap.subscribe(params =>{
       this.movie = service.getMovieData(params.get('title')).subscribe((movie)=>{
@@ -84,6 +84,26 @@ export class ScheduleComponent implements OnInit {
   clickedTime(time:string){
     this.time=time;
     console.log(time)
+  }
+
+  clickedContinue(id:number){
+    let selected = this.movie.seats.filter((seat:any) => seat === 'selected').length
+
+    if(this.time==='' || selected === 0){
+      alert('Missing time or selected seats')
+    }
+    else{
+      this.router.navigate(['movies',id,'tickets','schedule','checkout'],
+      {
+        queryParams:{
+          adults:this.service.quantityAdult,
+          children:this.service.quantityChild,
+          seniors:this.service.quantitySenior,
+          time:this.time
+        }
+      })
+    }
+    
   }
 
   clickedSeat(slug:string,id:number,index:number,totalTickets:number){

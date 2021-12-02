@@ -13,6 +13,10 @@ export class MoviesService {
   }
   
   TotalTickets:number = 0;
+  quantityAdult:number = 0;
+  quantityChild:number = 0;
+  quantitySenior:number = 0;
+
   constructor(private http:HttpClient) { }
   getAllMovies():Observable<any> {
     return this.http.get(this.apiUrl)
