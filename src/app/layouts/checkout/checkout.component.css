@@ -1,4 +1,66 @@
+.inputgroup{
+    margin-bottom: 40px;
+    z-index: 9;
+
+}
+.tickets{
+
+    position: relative;
+    overflow: hidden;
+    
+  }
+  .tickets-page{
+    color: white;
+    position: absolute;
+    z-index: 9;
+    top: 0;
+  }
 .inputgroup mat-form-field{
     z-index: 9;
-    background: white;
+}
+
+.inputgroup mat-form-field input{
+    z-index: 9;
+}
+
+.inputgroup mat-label{
+    z-index: 9;
+    color: white;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-underline::before{
+    background: white !important;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-underline{
+    background: white !important;
+}
+::ng-deep .mat-form-field-underline{
+    background: white !important;
+
+}
+
+.tickets-bg{
+    height: 100vh;
+    filter:blur(20px);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transform: scale(2);
+    z-index: 1;
+  }
+  .tickets-bg:after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    box-shadow: inset 100px 350px 0px rgb(0, 0, 0);
+  }
+
+
+.continue-tickets button:hover{
+    background-color: rgb(28, 135, 197);
+}
+
+.quantity-text{
+    font-size: 1.5em;
 }

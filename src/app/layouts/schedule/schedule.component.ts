@@ -109,33 +109,33 @@ export class ScheduleComponent implements OnInit {
   clickedSeat(slug:string,id:number,index:number,totalTickets:number){
     let selected = this.movie.seats.filter((seat:any) => seat === 'selected').length
     if(selected < totalTickets){
-      this.service.reserveSeat(slug,id,index);
       if(this.movie.seats[index-1] === 'reserved'){
         this.movie.seats[index-1] = 'reserved'
-        console.log(selected)
+        this.service.reserveSeat(slug,id,index);
 
-  
       }
       else if (this.movie.seats[index-1] === 'available'){
         this.movie.seats[index-1] = 'selected'
+        this.service.seatsReserved.push(index);
         selected = this.movie.seats.filter((seat:any) => seat === 'selected')
-        console.log(selected)
+        this.service.reserveSeat(slug,id,index);
 
 
       }
       else if (this.movie.seats[index-1] === 'selected'){
-
         this.movie.seats[index-1] = 'available'
+        this.service.seatsReserved.pop(index);
         selected = this.movie.seats.filter((seat:any) => seat === 'selected')
-        console.log(selected)
+        this.service.reserveSeat(slug,id,index);
 
 
       }
     }
     else if(selected === totalTickets){
-      this.service.reserveSeat(slug,id,index);
       if(this.movie.seats[index-1] === 'reserved'){
         this.movie.seats[index-1] = 'reserved'
+        this.service.reserveSeat(slug,id,index);
+
         console.log(selected)
 
   
@@ -143,6 +143,8 @@ export class ScheduleComponent implements OnInit {
       else if (this.movie.seats[index-1] === 'selected'){
         this.movie.seats[index-1] = 'available'
         selected = this.movie.seats.filter((seat:any) => seat === 'selected')
+        this.service.seatsReserved.pop(index);
+        this.service.reserveSeat(slug,id,index);
         console.log(selected)
 
 

@@ -81,7 +81,7 @@ export class TicketsComponent implements OnInit {
       this.service.TotalTickets = this.quantityAdult + this.quantityChild + this.quantitySenior;
       this.service.quantityAdult = this.quantityAdult;
       this.service.quantityChild = this.quantityChild;
-      this.quantitySenior = this.quantitySenior;
+      this.service.quantitySenior = this.quantitySenior;
       console.log(this.service.TotalTickets)
       this.router.navigate(['movies',id,'tickets','schedule'])
     }

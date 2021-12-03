@@ -29,7 +29,7 @@ const routes: Routes = [
   component: CheckoutComponent
 },
 {
-  path:'movies/:title/tickets/schedule/checkout/thank-you',
+  path:'movies/:title/tickets/schedule/checkout/thankyou',
   component: ThankYouComponent
 }
 

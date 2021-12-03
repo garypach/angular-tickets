@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import { forbiddenNameValidator,forbiddenCardValidator,forbiddenCvvValidator } from 'src/app/heroValidator';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MoviesService } from 'src/app/core/services/movies.service';
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -9,8 +11,8 @@ import { forbiddenNameValidator,forbiddenCardValidator,forbiddenCvvValidator } f
 export class CheckoutComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   name = new FormControl('', [Validators.required, forbiddenNameValidator(/bob/i)]);
-  card = new FormControl('', [Validators.required, forbiddenCardValidator(/^(?:(4[0-9]{12}(?:[0-9]{3})?)|(5[1-5][0-9]{14})|(6(?:011|5[0-9]{2})[0-9]{12})|(3[47][0-9]{13})|(3(?:0[0-5]|[68][0-9])[0-9]{11})|((?:2131|1800|35[0-9]{3})[0-9]{11}))$/)]);
-  cvv = new FormControl('', [Validators.required, forbiddenCvvValidator(/^[0-9]{3,4}$/)]);
+  card = new FormControl('', [Validators.required, forbiddenCardValidator(/^4[0-9]{12}(?:[0-9]{3})?$/)]);
+  cvv = new FormControl('', [Validators.required, forbiddenCvvValidator(/^[0-9]{4}$/)]);
 
   getNameErrorMessage() {
     if (this.name.hasError('required')) {
@@ -45,10 +47,48 @@ export class CheckoutComponent implements OnInit {
   }
 
 
-  constructor() { }
+
+  movie: any = [];
+  adultTickets:any;
+  childTickets :any;
+  seniorTickets :any;
+  time :any;
+  totalPrice:any;
+
+  constructor(private route:ActivatedRoute, public service:MoviesService, private router: Router ) {
+    console.log(this.movie);
+    this.route.paramMap.subscribe(params =>{
+      this.movie = service.getMovieData(params.get('title')).subscribe((movie)=>{
+        this.movie = {
+          id: movie.id,
+          backdrop_path:movie.backdrop_path,
+          title:movie.title,
+        }
+        console.log(this.movie)
+      })
+    })
+
+   }
 
   ngOnInit(): void {
+    this.route.queryParamMap.subscribe(params => {
+      this.adultTickets = params.get('adults');
+      this.childTickets = params.get('children');
+      this.seniorTickets = params.get('seniors');
+      this.time = params.get('time');
+      this.totalPrice = ((parseFloat(this.adultTickets) * 17.49) + (parseFloat(this.childTickets) * 14.49) + 
+      (parseFloat(this.seniorTickets) * 12.49)).toFixed(2);
+    })
     
+  }
+
+  checkoutContinue(id:number){
+    if(this.getNameErrorMessage() === '' && this.getEmailErrorMessage() === '' && this.getCardErrorMessage() === '' && this.getCvvErrorMessage() === ''){
+      this.router.navigate(['movies',id,'tickets','schedule','checkout','thankyou'])
+    }
+    else{
+      alert('Please fill missing fields')
+    }
   }
 
 }
