@@ -1,0 +1,43 @@
+
+#movies-list{
+    padding: 20px 5%;
+}
+.movie-box{
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border-radius: 12px;
+    height:600px;
+    min-width: 100%;
+    -webkit-box-shadow: 0px 65px 62px -59px rgba(255, 255, 255, 0.15);
+    -moz-box-shadow:0px 65px 62px -59px rgba(255, 255, 255, 0.15);
+    box-shadow: 0px 65px 62px -59px rgba(255, 255, 255, 0.15);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .movie-box:hover .av{
+    transform: translate3d(0,0,20px);
+    background-color: #f44336;
+  }
+  .movie-box .av{
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    bottom: 0px;
+    transform: translate3d(0,100%,20px);
+    transition: all .4s ease-in-out;
+  }
+  
+  
+  .movie-box .av .status{
+  padding: 20px;
+  border: 2px solid white;
+  border-radius: 4px;
+  color: white;
+  font-size: .8rem;
+  }

@@ -1,10 +1,10 @@
  <div class="tickets" >
     <div class="tickets-bg" [style.background]="'url(https://image.tmdb.org/t/p/w780'+ movie.backdrop_path + ')'">
     </div>
-    <div class="container">
+    <div class="container ">
         <div class="tickets-page container">
             <div class="row">
-                <div class="col-md-12 text-center">
+                <div class="col-md-12 text-center mt-5">
                     <h2>Select Ticket Type</h2>
                     <div class="tickets-list">
                     <div class="ticket-select">
@@ -15,7 +15,7 @@
                                 <button  (click)="clickedMinusAdult()" mat-fab color="warn" aria-label="Decrease ticket quantity">-</button>  
                             </div>
                             <div class="col text-center">
-                                <input type="text" [value] = "quantityAdult + ' Adult'"  >
+                                <h1 class=""> {{quantityAdult}} Adult</h1>
                                 <div class="row d-flex justify-content-center">$17.49</div>
                             </div>
                             <div class="col text-center">
@@ -30,7 +30,7 @@
                                     <button  (click)="clickedMinusChild()" mat-fab color="warn" aria-label="Decrease ticket quantity">-</button>  
                             </div>
                             <div class="col text-center">
-                                <input type="text" [value] = "quantityChild + ' Child'">
+                                <h1 class=""> {{quantityChild}} Child</h1>
                                 <div class="row d-flex justify-content-center">$14.49</div>
         
                             </div>
@@ -45,7 +45,7 @@
                                     <button  (click)="clickedMinusSenior()" mat-fab color="warn" aria-label="Decrease ticket quantity">-</button>  
                                 </div>
                                 <div class="col text-center">
-                                    <input type="text" [value] = "quantitySenior + ' Senior'">
+                                    <h1 class=""> {{quantitySenior}} Senior</h1>
                                     <div class="row d-flex justify-content-center">$12.49</div>
         
                                 </div>

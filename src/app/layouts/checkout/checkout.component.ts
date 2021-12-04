@@ -84,8 +84,15 @@ export class CheckoutComponent implements OnInit {
 
   checkoutContinue(id:number){
     if(this.getNameErrorMessage() === '' && this.getEmailErrorMessage() === '' && this.getCardErrorMessage() === '' && this.getCvvErrorMessage() === ''){
-      this.router.navigate(['movies',id,'tickets','schedule','checkout','thankyou'])
-    }
+      this.router.navigate(['movies',id,'tickets','schedule','checkout','thankyou'],
+      {
+        queryParams:{
+          adults:this.adultTickets,
+          children:this.childTickets,
+          seniors:this.seniorTickets,
+          time:this.time
+        }
+      })    }
     else{
       alert('Please fill missing fields')
     }

@@ -13,6 +13,7 @@ export class ScheduleComponent implements OnInit {
     title:'',
     seats:[]
   };
+  seatsReserved:any=[]
   
   time = '';
   constructor(private route:ActivatedRoute, public service:MoviesService, private router:Router ) {
@@ -89,10 +90,10 @@ export class ScheduleComponent implements OnInit {
   clickedContinue(id:number){
     let selected = this.movie.seats.filter((seat:any) => seat === 'selected').length
 
-    if(this.time==='' || selected === 0){
+    if(this.time=== '' || selected === 0){
       alert('Missing time or selected seats')
     }
-    else{
+    else if(selected === this.service.TotalTickets){
       this.router.navigate(['movies',id,'tickets','schedule','checkout'],
       {
         queryParams:{

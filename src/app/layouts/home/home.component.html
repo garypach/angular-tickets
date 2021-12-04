@@ -1,8 +1,7 @@
 <div id="movies-list">
     <div class="row">
         <div class="col-md-3" *ngFor="let movie of moviesDisplay">
-            <div class="movie-box"  (click)="clickedMovie(movie.id)">
-                {{movie.title}}
+            <div class="movie-box mb-5"  (click)="clickedMovie(movie.id)" [style.background]="'url(https://image.tmdb.org/t/p/w780'+ movie.poster_path + ')'">
             <div class="av open">
                 <div class="status">
                     Tickets Available
