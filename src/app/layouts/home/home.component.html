@@ -1,12 +1,170 @@
+<div class="px-5 mt-10 hero-cont">
+    <div class="row relative ">
+        <div class="prev-hero">
+            <i class="fa-solid fa-angle-left"></i>
+        </div>
+        <div class="next-hero">
+            <i class="fa-solid fa-angle-right"></i>
+        </div>
+        <div class="single-item slider-cont">
+
+            <div class="hero-slide">
+                <div class="text">
+                    <p>{{moviesDisplay[0].overview}}
+                    <p>
+                        <button>Learn More</button>
+
+                </div>
+                <div class="overlay"></div>
+
+                <img src="https://image.tmdb.org/t/p/original{{moviesDisplay[0].backdrop_path}}" class="d-block"
+                    alt="...">
+
+            </div>
+            <div class="hero-slide">
+                <div class="text">
+                    <p>{{moviesDisplay[1].overview}}
+                    <p>
+                        <button>Learn More</button>
+
+                </div>
+                <div class="overlay"></div>
+
+                <img src="https://image.tmdb.org/t/p/original{{moviesDisplay[1].backdrop_path}}" class="d-block"
+                    alt="...">
+
+            </div>
+            <div class="hero-slide">
+                <div class="text">
+                    <p>{{moviesDisplay[2].overview}}
+                    <p>
+                        <button>Learn More</button>
+
+                </div>
+                <div class="overlay"></div>
+
+                <img src="https://image.tmdb.org/t/p/original{{moviesDisplay[2].backdrop_path}}" class="d-block"
+                    alt="...">
+
+            </div>
+        </div>
+        <div class="slick-slider-dots"></div>
+    </div>
+</div>
 <div id="movies-list">
-    <div class="row">
-        <div class="col-md-3" *ngFor="let movie of moviesDisplay">
-            <div class="movie-box mb-5"  (click)="clickedMovie(movie.id)" [style.background]="'url(https://image.tmdb.org/t/p/w780'+ movie.poster_path + ')'">
-            <div class="av open">
-                <div class="status">
-                    Tickets Available
+    <div class="row relative">
+        <div class="prev-movie">
+            <i class="fa-solid fa-angle-left"></i>
+        </div>
+        <div class="next-movie">
+            <i class="fa-solid fa-angle-right"></i>
+        </div>
+        <div class="center">
+            <div class="movie-box" (click)="clickedMovie(moviesDisplay[0].id)">
+                <img style=" object-fit: cover;
+                    width: 100%;
+                    max-height: 100%;" src="https://image.tmdb.org/t/p/w780{{moviesDisplay[0].poster_path}}"
+                    alt={{moviesDisplay[0].title}} />
+                <div class="av open">
+                    <div class="status">
+                        Tickets Available
+                    </div>
                 </div>
             </div>
+            <div class="movie-box" (click)="clickedMovie(moviesDisplay[1].id)">
+                <img style=" object-fit: cover;
+            width: 100%;
+            max-height: 100%;" src="https://image.tmdb.org/t/p/w780{{moviesDisplay[1].poster_path}}"
+                    alt={{moviesDisplay[2].title}} />
+                <div class="av open">
+                    <div class="status">
+                        Tickets Available
+                    </div>
+                </div>
+            </div>
+            <div class="movie-box" (click)="clickedMovie(moviesDisplay[2].id)">
+                <img style=" object-fit: cover;
+    width: 100%;
+    max-height: 100%;" src="https://image.tmdb.org/t/p/w780{{moviesDisplay[2].poster_path}}"
+                    alt={{moviesDisplay[2].title}} />
+                <div class="av open">
+                    <div class="status">
+                        Tickets Available
+                    </div>
+                </div>
+            </div>
+            <div class="movie-box" (click)="clickedMovie(moviesDisplay[3].id)">
+                <img style=" object-fit: cover;
+                width: 100%;
+                max-height: 100%;" src="https://image.tmdb.org/t/p/w780{{moviesDisplay[3].poster_path}}" alt={{moviesDisplay[3].title}}/>
+                <div class="av open">
+                    <div class="status">
+                        Tickets Available
+                    </div>
+        </div>
+    </div>
+    <div class="movie-box" (click)="clickedMovie(moviesDisplay[4].id)">
+        <img style=" object-fit: cover;
+        width: 100%;
+        max-height: 100%;" src="https://image.tmdb.org/t/p/w780{{moviesDisplay[4].poster_path}}" alt={{moviesDisplay[4].title}}/>
+        <div class="av open">
+            <div class="status">
+                Tickets Available
+            </div>
+</div>
+</div>
+<div class="movie-box" (click)="clickedMovie(moviesDisplay[5].id)">
+    <img style=" object-fit: cover;
+    width: 100%;
+    max-height: 100%;" src="https://image.tmdb.org/t/p/w780{{moviesDisplay[5].poster_path}}" alt={{moviesDisplay[5].title}}/>
+    <div class="av open">
+        <div class="status">
+            Tickets Available
+        </div>
+</div>
+</div>
+<div class="movie-box" (click)="clickedMovie(moviesDisplay[6].id)">
+    <img style=" object-fit: cover;
+    width: 100%;
+    max-height: 100%;" src="https://image.tmdb.org/t/p/w780{{moviesDisplay[6].poster_path}}" alt={{moviesDisplay[6].title}}/>
+    <div class="av open">
+        <div class="status">
+            Tickets Available
+        </div>
+</div>
+</div>
+        </div>
+    </div>
+</div>
+<div class="promotions-cont">
+    <div class="promotions">
+        <div class="promotions-image-cont">
+            <img src="https://cdn.britannica.com/08/190708-050-634BBDC0/Woman-container-popcorn-cinema-movie-theater.jpg"
+                alt="popcorn bucket">
+        </div>
+        <div class="promotions-text-cont">
+            <div class="promotions-text">
+                <h2>Save Every Time You Pop In</h2>
+                <p>Get your 2022 Refillable Popcorn Bucket today for only $20.99+tax, and refill it on every visit to
+                    for only $4.99+tax. Don't miss this terrific value on the perfect movie snack, valid
+                    for the entire year!</p>
+                <button>Buy Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="promotions-cont">
+    <div class="promotions-type-two">
+        <div class="promotions-image-cont">
+            <img src="https://amc-theatres-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,w_1600/v1640127386/amc-cdn/general/food-and-drink/_2022/impossible-nuggets/FB1467_ImpossibleNuggets_WebPromo_1200x856.jpg"
+                alt="meal combo">
+        </div>
+        <div class="promotions-text-cont">
+            <div class="promotions-text">
+                <h2>Save Every Time You Pop In</h2>
+                <p>Crispy. Tender. Delicious. Impossible™ Nuggets are now available. Made from plants and packed with
+                    flavor, pair yours with a refreshing AHA Sparkling Water and take your taste buds on a trip.</p>
+                <button>Order Now</button>
             </div>
         </div>
     </div>
