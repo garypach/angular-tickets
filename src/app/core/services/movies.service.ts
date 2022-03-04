@@ -23,6 +23,11 @@ export class MoviesService {
     return this.http.get(this.apiUrl)
   }
 
+  getAllMovieCredits(id:any):Observable<any> {
+    return this.http.get('https://api.themoviedb.org/3/movie/'+ id.toString() + '/credits?api_key=def4f9ac2beb10d1686640969bf52c0b&language=en-US')
+  }
+
+
   getMovieData(id:any):Observable<any> {
     return this.http.get('https://api.themoviedb.org/3/movie/'+ id.toString() + '?api_key=def4f9ac2beb10d1686640969bf52c0b&language=en-US')
   }

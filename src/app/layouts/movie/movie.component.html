@@ -1,17 +1,137 @@
-<div class="container mt-5">
-    <div class="movie-page">
-        <div class="movie-poster">
-            <img src="{{'https://image.tmdb.org/t/p/w780' + movie.backdrop_path}}" />
+<div class="row mt-5">
+        <div class="movie-poster" *ngIf="movie">
+            <img src="{{'https://image.tmdb.org/t/p/original' + movie.backdrop_path}}" />
             <div class="movie-title">
                 <p>{{movie.title}}</p>
-                <button mat-raised-button isRoundButton=true color="warn" (click)="clickedGetTickets(movie.id)">Get tickets</button>
-        </div>
-      
-    </div>
-   
+                <button (click)="clickedGetTickets(movie.id)">Get tickets</button>
+        </div> 
 </div>
 
-    <div class="movie-overview container">
-        {{movie.overview}}
-    </div>
 
+
+<div class="overview-cast-cont">
+    <div class="overview-cast">
+        <div class="movie-overview">
+            {{movie.overview}}
+        </div>
+        <div class="movie-cast">
+            <p>
+                Cast
+            </p>
+            <ul *ngFor="let item of movieCredits">
+                <li>{{item.name}} / {{item.character}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="promotions-cont">
+    <div class="promotions">
+        <div class="promotions-image-cont">
+            <img src="https://cdn.britannica.com/08/190708-050-634BBDC0/Woman-container-popcorn-cinema-movie-theater.jpg"
+                alt="popcorn bucket">
+        </div>
+
+        
+        <div class="promotions-text-cont">
+            <div class="promotions-text">
+                <h2>Save Every Time You Pop In</h2>
+                <p>Get your 2022 Refillable Popcorn Bucket today for only $20.99+tax, and refill it on every visit to
+                    for only $4.99+tax. Don't miss this terrific value on the perfect movie snack, valid
+                    for the entire year!</p>
+                <button>Buy Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="more-movies">
+    <h3>More Movies</h3>
+</div>
+<div id="movies-list" >
+    <div class="row relative" >
+        <div class="prev-movie">
+            <i class="fa-solid fa-angle-left"></i>
+        </div>
+        <div class="next-movie">
+            <i class="fa-solid fa-angle-right"></i>
+        </div>
+        <div class="center" >
+            <div class="movie-box"  (click)="clickedMovie(moviesDisplay[0].id)">
+                <img style=" object-fit: cover;
+                    width: 100%;
+                    max-height: 100%;" src="https://image.tmdb.org/t/p/w780{{moviesDisplay[0].poster_path}}"
+                    alt={{moviesDisplay[0].title}} />
+                <div class="av open">
+                    <div class="status">
+                        Tickets Available
+                    </div>
+                </div>
+            </div>
+            <div class="movie-box" (click)="clickedMovie(moviesDisplay[1].id)">
+                <img style=" object-fit: cover;
+            width: 100%;
+            max-height: 100%;" src="https://image.tmdb.org/t/p/w780{{moviesDisplay[1].poster_path}}"
+                    alt={{moviesDisplay[2].title}} />
+                <div class="av open">
+                    <div class="status">
+                        Tickets Available
+                    </div>
+                </div>
+            </div>
+            <div class="movie-box" (click)="clickedMovie(moviesDisplay[2].id)">
+                <img style=" object-fit: cover;
+    width: 100%;
+    max-height: 100%;" src="https://image.tmdb.org/t/p/w780{{moviesDisplay[2].poster_path}}"
+                    alt={{moviesDisplay[2].title}} />
+                <div class="av open">
+                    <div class="status">
+                        Tickets Available
+                    </div>
+                </div>
+            </div>
+            <div class="movie-box" (click)="clickedMovie(moviesDisplay[3].id)">
+                <img style=" object-fit: cover;
+                width: 100%;
+                max-height: 100%;" src="https://image.tmdb.org/t/p/w780{{moviesDisplay[3].poster_path}}" alt={{moviesDisplay[3].title}}/>
+                <div class="av open">
+                    <div class="status">
+                        Tickets Available
+                    </div>
+        </div>
+    </div>
+    <div class="movie-box" (click)="clickedMovie(moviesDisplay[4].id)">
+        <img style=" object-fit: cover;
+        width: 100%;
+        max-height: 100%;" src="https://image.tmdb.org/t/p/w780{{moviesDisplay[4].poster_path}}" alt={{moviesDisplay[4].title}}/>
+        <div class="av open">
+            <div class="status">
+                Tickets Available
+            </div>
+</div>
+</div>
+<div class="movie-box" (click)="clickedMovie(moviesDisplay[5].id)">
+    <img style=" object-fit: cover;
+    width: 100%;
+    max-height: 100%;" src="https://image.tmdb.org/t/p/w780{{moviesDisplay[5].poster_path}}" alt={{moviesDisplay[5].title}}/>
+    <div class="av open">
+        <div class="status">
+            Tickets Available
+        </div>
+</div>
+</div>
+
+<div class="movie-box" (click)="clickedMovie(moviesDisplay[6].id)">
+    <img style=" object-fit: cover;
+    width: 100%;
+    max-height: 100%;" src="https://image.tmdb.org/t/p/w780{{moviesDisplay[6].poster_path}}" alt={{moviesDisplay[6].title}}/>
+    <div class="av open">
+        <div class="status">
+            Tickets Available
+        </div>
+</div>
+</div>
+        </div>
+    </div>
+</div>
