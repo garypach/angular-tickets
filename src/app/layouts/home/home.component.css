@@ -125,6 +125,7 @@
 #movies-list {
   padding: 20px;
   width: 100%;
+  margin: 50px 0;
 }
 #movies-list .prev-movie {
   text-align: center;
@@ -190,6 +191,7 @@
 
 .promotions-cont {
   padding: 50px;
+  padding-top: 0;
   width: 100%;
 }
 .promotions-cont .promotions {

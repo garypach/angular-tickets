@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
     ]
   })
 
-  $('.center').slick({
+  $('.center').not('.slick-initialized').slick({
     centerMode: true,
     centerPadding: '60px',
     slidesToShow: 4,        
@@ -69,12 +69,11 @@ export class HomeComponent implements OnInit {
         settings: {
           centerMode: true,
           centerPadding: '40px',
-          slidesToShow: 1
+          slidesToShow: 2
         }
       }
     ]
-  });
-  
+  });  
   }
 
   clickedMovie(id:number){

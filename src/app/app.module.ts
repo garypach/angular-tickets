@@ -18,6 +18,7 @@ import {MatInputModule} from '@angular/material/input';
 import { TicketsComponent } from './layouts/tickets/tickets.component';
 import {MatFormFieldModule} from '@angular/material/form-field'; 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SlickCarouselModule
   ],
   providers: [
     MoviesService,

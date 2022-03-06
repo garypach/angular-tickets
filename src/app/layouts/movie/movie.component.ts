@@ -40,7 +40,7 @@ export class MovieComponent implements OnInit {
         console.log(this.movieCredits)
       })
     })
-    $('.center').slick({
+    $('.center').not('.slick-initialized').slick({
       centerMode: true,
       centerPadding: '60px',
       slidesToShow: 4,        
@@ -73,6 +73,7 @@ export class MovieComponent implements OnInit {
         }
       ]
     });
+
   }
 
   
