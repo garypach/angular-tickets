@@ -6,13 +6,75 @@
   background-repeat: no-repeat !important;
   border-radius: 12px;
   height:600px;
-  min-width: 100%;
-  -webkit-box-shadow: 0px 65px 62px -59px rgba(255, 255, 255, 0.15);
-  -moz-box-shadow:0px 65px 62px -59px rgba(255, 255, 255, 0.15);
-  box-shadow: 0px 65px 62px -59px rgba(255, 255, 255, 0.15);
+  width: 100%;
+  min-width: 320px;
+  max-width: 400px;
   position: relative;
   /* overflow: hidden; */
 }
+
+.thankyou-cont{
+  display:flex;
+  justify-content: center;
+  width: 100%;
+  color: #ffff;
+  margin: 25px 0;
+}
+.thankyou-user-info{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 50%;
+}
+.thankyou{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+
+}
+
+.thankyou h3{
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+}
+.thankyou-title{
+  margin-bottom: 15px;
+}
 .quantity-text{
+    width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   font-size: 1.5em;
+  margin-bottom: 25px;
+}
+
+.thankyou-title{
+  margin-bottom: 0px;
+  margin-right: 25px;
+}
+
+.continue-thankyou button{
+  font-size: 16px;
+}
+.continue-thankyou button:hover{
+  background-color: #e51937;
+}
+
+
+
+@media (min-width:768px) {
+  .thankyou-user-info{
+      flex-direction: row;
+      width: 100%;
+      max-width: 800px;
+    }
 }

@@ -1,75 +1,73 @@
-<div id="movies-list">
-    <div class="container">
-        <div class="row d-flex flex-direction-row text-center">
-            <h1 class="mb-5">Thank you for your order</h1>
-            <h2 class="mb-5">Order has been sent to your email</h2>
-            <h1 class="mb-5">Order number #{{movie.id}}</h1>
-            <div class="col-lg-5 container mb-5">
-                <div class="movie-box" [style.background]="'url(https://image.tmdb.org/t/p/w780'+ movie.poster + ')'">
-                </div>
-            </div>
-            <div class="col-md-5 text-center ">
-                <div class="container ">
-                 <div class="d-flex quantity-text ">
-                     <div class="container">
-                         Movie Start
-                     </div>
-                     <div class="container">
-                         {{time}}
-                     </div>
-                 </div>
-                 <div *ngIf="adultTickets > 0 " class="d-flex quantity-text mt-5">
-                     <div class="container">
-                         Adult
-                     </div>
-                     <div class="container">
-                         {{adultTickets}}
-                     </div>
-                 </div>
-                 <div *ngIf="childTickets > 0 " class="d-flex mt-5 quantity-text">
-                     <div class="container">
-                         Child
-                     </div>
-                     <div class="container">
-                         {{childTickets}}
-                     </div>
-                 </div>
-                 <div *ngIf="seniorTickets > 0 " class="d-flex mt-5 quantity-text">
-                     <div class="container">
-                         Senior
-                     </div>
-                     <div class="container">
-                         {{seniorTickets}}
-                     </div>
-                 </div>
-                 <div class="d-flex mt-5 quantity-text">
-                     <div class="container">
-                         Seats
-                     </div>
-                     <div class="container">
-                         {{seatsReserved}}
-                     </div>
-                 </div>
-                 <div *ngIf="adultTickets > 0 " class="d-flex mt-5 quantity-text">
-                     <div class="container">
-                         Total
-                     </div>
-                     <div class="container">
-                         ${{totalPrice}}
-                     </div>
-                 </div>
-                 
-             </div>
-             </div>
+<div class="thankyou-cont" >
+    <div class="thankyou-user-info">
+        <div class="movie-box" [style.background]="'url(https://image.tmdb.org/t/p/w780'+ movie.poster + ')'">
         </div>
+                   <div class="thankyou">
+                    <div class="mb-5">
+                        <h1 class="mb-5">Thank you for your order</h1>
+                        <h2 class="mb-5">Order has been sent to your email</h2>
+                        <h1 class="">Order number #{{movie.id}}</h1>                       
+                    </div>
+                    <div class="mt-5 mb-8">
+                        <h3 class="">{{movie.title}}</h3>
+                    </div>
 
-        <div class="row">
-            <div class="container d-flex justify-content-center mt-5 mb-5 continue-tickets">
-                <a href="/">
-                    <button mat-raised-button isRoundButton="true" color="warn">Return Home</button>
-                </a>
-            </div>
-        </div>
+                    <div class="quantity-text">
+                        <div class="thankyou-title">
+                            Movie Start
+                        </div>
+                        <div class="">
+                            {{time}}
+                        </div>
+                    </div>
+                    <div *ngIf="adultTickets > 0 " class="quantity-text mt-5">
+                        <div class="thankyou-title">
+                            Adult
+                        </div>
+                        <div class="">
+                            {{adultTickets}}
+                        </div>
+                    </div>
+                    <div *ngIf="childTickets > 0 " class="quantity-text mt-5">
+                        <div class="thankyou-title">
+                            Child
+                        </div>
+                        <div class="">
+                            {{childTickets}}
+                        </div>
+                    </div>
+                    <div *ngIf="seniorTickets > 0 " class="quantity-text mt-5">
+                        <div class="thankyou-title">
+                            Senior
+                        </div>
+                        <div class="">
+                            {{seniorTickets}}
+                        </div>
+                    </div>
+                    <div class="mt-5 quantity-text">
+                        <div class="thankyou-title">
+                            Seats
+                        </div>
+                        <div class="">
+                            {{this.service.seatsReserved}}
+                        </div>
+                    </div>
+                    <div class="quantity-text mt-5">
+                        <div class="thankyou-title">
+                            Total
+                        </div>
+                        <div class="">
+                            ${{totalPrice}}
+                        </div>
+                    </div>
+                    <div class="continue-thankyou mt-5">
+
+                        <a href="/">
+                            <button mat-raised-button isRoundButton="true" color="Link" [style.width]="150+'px'"  [style.border-radius]="100+'px'" [style.padding]="10+'px'">Return Home</button>
+
+                        </a>
+                    </div>
+                </div>
+             
     </div>
-   
-</div>
+ </div>
