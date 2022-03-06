@@ -12,7 +12,7 @@
                 <div class="text">
                     <p>{{moviesDisplay[0].overview}}
                     <p>
-                        <button>Learn More</button>
+                        <button (click)="clickedMovie(moviesDisplay[0].id)">Learn More</button>
 
                 </div>
                 <div class="overlay"></div>
@@ -25,7 +25,7 @@
                 <div class="text">
                     <p>{{moviesDisplay[1].overview}}
                     <p>
-                        <button>Learn More</button>
+                        <button (click)="clickedMovie(moviesDisplay[1].id)">Learn More</button>
 
                 </div>
                 <div class="overlay"></div>
@@ -38,7 +38,7 @@
                 <div class="text">
                     <p>{{moviesDisplay[2].overview}}
                     <p>
-                        <button>Learn More</button>
+                        <button (click)="clickedMovie(moviesDisplay[2].id)">Learn More</button>
 
                 </div>
                 <div class="overlay"></div>

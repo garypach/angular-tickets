@@ -1,8 +1,6 @@
-<div class="tickets" >
-    <div class="container">
-        <div class="tickets-page container mt-5">
-            <div class="row d-flex flex-direction-row">
-                <div class="col-md text-center">
+<div class="tickets-info-cont" >
+    <div class="tickets-user-info">
+                <div class="user-info">
                     <h2>Checkout</h2>
                     <div class="container inputgroup">
                         <mat-form-field appearance="fill">
@@ -35,67 +33,62 @@
                    </div>
                </div>
                 </div>
-                <div class="col-md text-center">
-                   <div class="container">
-                    <div class="container mb-5">
+                   <div class="tickets-info">
+                    <div class="mb-5">
                      <h3>{{movie.title}}</h3>
-                      </div>
-                    <div class="d-flex quantity-text">
-                        <div class="container">
+                    </div>
+                    <div class="quantity-text">
+                        <div class="ticket-info-title">
                             Movie Start
                         </div>
-                        <div class="container">
+                        <div class="">
                             {{time}}
                         </div>
                     </div>
-                    <div *ngIf="adultTickets > 0 " class="d-flex quantity-text mt-5">
-                        <div class="container">
+                    <div *ngIf="adultTickets > 0 " class="quantity-text mt-5">
+                        <div class="ticket-info-title">
                             Adult
                         </div>
-                        <div class="container">
+                        <div class="">
                             {{adultTickets}}
                         </div>
                     </div>
-                    <div *ngIf="childTickets > 0 " class="d-flex mt-5 quantity-text">
-                        <div class="container">
+                    <div *ngIf="childTickets > 0 " class="quantity-text mt-5">
+                        <div class="ticket-info-title">
                             Child
                         </div>
-                        <div class="container">
+                        <div class="">
                             {{childTickets}}
                         </div>
                     </div>
-                    <div *ngIf="seniorTickets > 0 " class="d-flex mt-5 quantity-text">
-                        <div class="container">
+                    <div *ngIf="seniorTickets > 0 " class="quantity-text mt-5">
+                        <div class="ticket-info-title">
                             Senior
                         </div>
-                        <div class="container">
+                        <div class="">
                             {{seniorTickets}}
                         </div>
                     </div>
-                    <div class="d-flex mt-5 quantity-text">
-                        <div class="container">
+                    <div class="mt-5 quantity-text">
+                        <div class="ticket-info-title">
                             Seats
                         </div>
-                        <div class="container">
+                        <div class="">
                             {{this.service.seatsReserved}}
                         </div>
                     </div>
-                    <div *ngIf="adultTickets > 0 " class="d-flex mt-5 quantity-text">
-                        <div class="container">
+                    <div class="quantity-text mt-5">
+                        <div class="ticket-info-title">
                             Total
                         </div>
-                        <div class="container">
+                        <div class="">
                             ${{totalPrice}}
                         </div>
                     </div>
-                    
+                    <div class="continue-tickets mt-5">
+                        <button mat-raised-button isRoundButton="true" color="Link"  [style.font-size]="24+'px'" [style.width]="150+'px'"  [style.border-radius]="100+'px'" [style.padding]="10+'px'" (click)="checkoutContinue(movie.id)">Checkout</button>
+                    </div>
                 </div>
-                </div>
-                <div class="container d-flex justify-content-center mt-5 mb-5 continue-tickets">
-                    <button mat-raised-button isRoundButton="true" color="Link"  [style.font-size]="24+'px'" [style.width]="150+'px'"  [style.border-radius]="100+'px'" [style.padding]="10+'px'" (click)="checkoutContinue(movie.id)">Checkout</button>
-                </div>
-        
-            </div>
-        </div>
+             
     </div>
  </div>
