@@ -1,63 +1,39 @@
-.schedule-page{
-    color: white;
-    -webkit-box-shadow: 0px 65px 62px -59px rgba(255, 255, 255, 0.15);
-    -moz-box-shadow:0px 65px 62px -59px rgba(255, 255, 255, 0.15);
-    box-shadow: 0px 65px 62px -59px rgba(255, 255, 255, 0.15);
-    position: absolute;
-    z-index: 9;
-    top: 0;
-}
-.schedule{
-
-    position: relative;
-    overflow: hidden;
-    
-}
-
-.schedule-bg{
-    height: 100vh;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-    background-size: cover !important;
-    transform: scale(2);
-}
-.schedule-bg:after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
-    box-shadow: inset 0px 500px 500px rgb(0, 0, 0);
-}
-.schedule-poster{
-    width: 100%;
-    object-fit: contain;
-    position: relative;
-}
-.schedule-poster:after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
-    box-shadow: inset 0px 0px 200px black;
-  }
-.schedule-poster img{
-    width: 100%;
-    object-fit: contain;
-}
-.schedule-title{
-    position: absolute;
-    bottom: 70px;
-    left:30px;
-    font-weight: 700;
-    font-size: 2.5em;
-}
-.hours-list{
+.schedule-seats-cont{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: white;
+    position: relative;
+}
+.schedule-seats{
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 80%;
+}
+
+.schedule-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.hours-list{
     margin-top: 20px;
 }
+
 .time{
-    margin: 0 20px;
     border: 1px solid white ;
     height: 40px;
     width: 80px;
+    min-width: 80px;
     border-radius: 50px;
     display: flex;
     align-items: center;
@@ -73,44 +49,33 @@
     border: 1px solid rgb(78, 174, 230);
     color: rgb(78, 174, 230);
 }
-.schedule-overview{
-    margin-top: 50px;
-}
-#select-chair{
-    background: black;
+
+
+.seats-cont{
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    align-items: center;
+    margin-top: 50px;
     background: rgb(82, 81, 81,0);
     border-top: 5px solid white;
     border-top-left-radius: 70px;
     border-top-right-radius: 70px;
-    text-align: center;
-    padding: 20px 50px 50px 50px;
-    margin-top: 50px;
+    padding-top: 100px;
+    width: 100%;
+    margin-bottom: 30px;
     
 }
-.seats-grid{
-    padding-top: 50px;
-    display:grid;
-    grid-template-columns: repeat(9,40px);
-    grid-template-rows: 5;
-    grid-gap: 20px;
- 
 
-
-}
 .seat{
     height: 30px;
-    width: 40px;
+    width: 100%;
+    min-width: 30px;
     background: black;
     opacity: .8;
     border: 1px solid white;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
     cursor: pointer;
-
+    text-align: center;
 }
 .seat:hover{
     border: 1px solid rgb(78, 190, 255);
@@ -133,6 +98,7 @@
 
 .seat-legend{
     display: flex;
+    justify-content: space-around;
 
 }
 
@@ -150,6 +116,7 @@
     border: 1px solid white;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
+    margin-right: 5px;
 }
 .selected-seat{
     background: red;
@@ -159,6 +126,8 @@
     border: 1px solid white;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
+    margin-right: 5px;
+
 }
 .reserved-seat{
     background: rgb(173, 173, 173);
@@ -168,4 +137,29 @@
     border: 1px solid white;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
+    margin-right: 5px;
+
+}
+.schedule-page{
+    color: white;
+    -webkit-box-shadow: 0px 65px 62px -59px rgba(255, 255, 255, 0.15);
+    -moz-box-shadow:0px 65px 62px -59px rgba(255, 255, 255, 0.15);
+    box-shadow: 0px 65px 62px -59px rgba(255, 255, 255, 0.15);
+    position: absolute;
+    z-index: 9;
+    top: 0;
+}
+
+
+.schedule-bg{
+    height: 100vh;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+}
+.schedule-bg:after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    box-shadow: inset 0px 500px 500px rgb(0, 0, 0);
 }

@@ -1,71 +1,55 @@
-<div class="schedule">
-    <div class="schedule-bg" [style.background]="'url(https://image.tmdb.org/t/p/w780'+ movie.backdrop_path + ')'">
-    </div>
-    <div class="container">
-        <div class="schedule-page container" >
-            <div class="schedule-content">
-                <div class="row mt-5">
-                    <div class="col-md-12">
-                    </div>
-                    </div>
-                    <div class="row">
-                        <h1>{{movie.title}}</h1>
-                        <h1>Theater</h1>
-                    <div class="col-md-12">
-                        <h2>Digital</h2>
-                        <div class="theater-desc row">
-                            <div class="col">Reserved Seating</div>
-                            <div class="col">Closed Caption</div>
-                            <div class="col">Audio Description</div>
-                        </div>
-                        <div class="hours-list row">
-                        <div class="time col timeselected" (click)="clickedTime('1:20pm')" [ngClass]="{timeselected: time == '1:20pm'}">1:20pm</div>
-                        <div class="time col" (click)="clickedTime('4:30pm')" [ngClass]="{timeselected: time == '4:30pm'}">4:30pm</div>
-                        <div class="time col" (click)="clickedTime('8:00pm')" [ngClass]="{timeselected: time == '8:00pm'}">8:00pm</div>
-    
-    
-                        </div>
-                    </div>
-                </div>
-                <section id="select-chair">
-                    <div class="row constainer">
-                        <div class="col-md-12 container">
-                            SCREEN
-                            
-                            <div class="seats-grid container">
-                                <ng-container  *ngFor="let seats of movie.seats; index as i">
-                                    <div class="seat" [ngClass]="{reserved: seats == 'reserved',selected: seats == 'selected'}" (click)=" clickedSeat(movie.title,movie.id,i+1,this.service.TotalTickets)">{{i+1}}</div>
-                                </ng-container>
-                            </div>
-                            
-                        </div>
-                        
-                    </div>
-                    <div class="seat-legend">
-                        <div class="icon">
-                            <div class="open-seat"></div>
-                            <div>Available</div>
-                        </div>
-                        <div class="icon">
-                            <div class="selected-seat"></div>
-                            <div>Selected</div>
-                        </div>
-                        <div class="icon">
-                            <div class="reserved-seat"></div>
-                            <div>Occupied</div>
-                        </div>
-                      
-                    </div>
-                    
-                </section>
-                
+<div class="schedule-seats-cont schedule-bg" [style.background]="'url(https://image.tmdb.org/t/p/original'+ movie.backdrop_path + ')'">
+    <div class="schedule-seats">
+        <div class="schedule-cont">
+            <div class="w-[100%] flex items-start flex-col">
+                <h1>{{movie.title}}</h1>
+                <h1>Theater</h1>
+                <h2>Digital</h2>
             </div>
-          
+           
+            <div class="grid grid-cols-3 gap-3">
+                <div class="">Reserved Seating</div>
+                <div class="">Closed Caption</div>
+                <div class="">Audio Description</div>
+            </div>
+            <div class="grid grid-cols-3 gap-3 hours-list">
+                <div class="time timeselected" (click)="clickedTime('1:20pm')"
+                    [ngClass]="{timeselected: time == '1:20pm'}">1:20pm</div>
+                <div class="time" (click)="clickedTime('4:30pm')" [ngClass]="{timeselected: time == '4:30pm'}">
+                    4:30pm</div>
+                <div class="time" (click)="clickedTime('8:00pm')" [ngClass]="{timeselected: time == '8:00pm'}">
+                    8:00pm</div>
+            </div>
         </div>
-        <div class="container d-flex justify-content-center mb-5 continue-tickets">
-            <button mat-raised-button isRoundButton="true" color="Link"  [style.font-size]="24+'px'" [style.width]="150+'px'"  [style.border-radius]="100+'px'" [style.padding]="10+'px'" (click)="clickedContinue(movie.id)">Continue</button>
+        <div class="seats-cont ">
+                    <div class="grid grid-cols-9 gap-6">
+                        <ng-container *ngFor="let seats of movie.seats; index as i">
+                            <div class="seat" [ngClass]="{reserved: seats == 'reserved',selected: seats == 'selected'}"
+                                (click)=" clickedSeat(movie.title,movie.id,i+1,this.service.TotalTickets)">{{i+1}}
+                            </div>
+                        </ng-container>
+                    </div>
+                <div class="seat-legend">
+                    <div class="icon">
+                        <div class="open-seat"></div>
+                        <div>Available</div>
+                    </div>
+                    <div class="icon">
+                        <div class="selected-seat"></div>
+                        <div>Selected</div>
+                    </div>
+                    <div class="icon">
+                        <div class="reserved-seat"></div>
+                        <div>Occupied</div>
+                    </div>
+
+                </div>
+        </div>
+
+        <div class="">
+            <button mat-raised-button isRoundButton="true" color="Link" [style.font-size]="24+'px'"
+                [style.width]="150+'px'" [style.border-radius]="100+'px'" [style.padding]="10+'px'"
+                (click)="clickedContinue(movie.id)">Continue</button>
         </div>
     </div>
-    
-    
 </div>

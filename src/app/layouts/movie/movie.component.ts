@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,AfterContentInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MoviesService } from 'src/app/core/services/movies.service';
 declare var $: any;
@@ -18,16 +18,18 @@ export class MovieComponent implements OnInit {
     
    }
 
-  ngOnInit(): void {
+   ngOnInit(): void {
+    this._movie.getAllMovies().subscribe((movie)=>{
+      this.moviesDisplay = movie.results;
+    });
+
     this.route.paramMap.subscribe(params =>{
       this._singleMovie.getMovieData(params.get('title')).subscribe((movie)=>{
         this.movie = movie;
         console.log(movie)
       })
     })
-    this._movie.getAllMovies().subscribe((movie)=>{
-      this.moviesDisplay = movie.results;
-    });
+   
 
     this.route.paramMap.subscribe(params =>{
       this._movieCredits.getAllMovieCredits(params.get('title')).subscribe((movie)=>{
