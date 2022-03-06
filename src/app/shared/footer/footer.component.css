@@ -1,4 +1,27 @@
 
+.social-media-bar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 25px;
+    background-color: black;
+  }
+  .social-media-bar .social-media-icons {
+    display: flex;
+    color: #ffff;
+    font-size: 1.7rem;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 500px;
+  }
+  .social-media-bar .social-media-icons .fa-brands {
+    transition: 0.3 all ease-in-out;
+  }
+  .social-media-bar .social-media-icons .fa-brands:hover {
+    color: #00a2ff;
+    cursor: pointer;
+  }
+  
 .footer-links-cont {
     display: flex;
     justify-content: center;
